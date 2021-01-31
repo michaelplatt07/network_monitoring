@@ -36,8 +36,13 @@ To set up the application there are a few steps required to set up the Flask app
 - DBNAME=networkmonitoring
 - DBUSER=networkmonitor
 - DBPASS=pass
-- TODO(map) Include the variables required to set up texting account
-6. Run the app with `flask run` (Including `--host=0.0.0.0` will make the app available to other computers outside of the localhost)
+- EXPECTEDINTERNETSPEED=100.0 (Expected speed of internet)
+- EMAILSOURCE=some.email@mail.com (Email address that can be set to send texts)
+- EMAILPASS=pass (Password for the above email address)
+- SMSGATEWAY=smsgateway (Used for texting alerts.If this isn't desired you don't need to set)
+- HOSTMAC=11:11:11:11:11 (This should be the MAC address of the device running the app)
+6. Create a text file with a list of trusted device's MAC addresses called `trusted_macs.txt` in the folder with each MAC address on a separate line. This will be used as a source of truth for authorized devices 
+7. Run the app with `flask run` (Including `--host=0.0.0.0` will make the app available to other computers outside of the localhost)
 
 If the setup was done correctly the console will show the application is up and running. To test, run the command `curl localhost:5000/` and see if the response `Hello, World` comes back.
 
