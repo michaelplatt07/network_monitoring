@@ -23,6 +23,8 @@ up_time = re.split(' |, ', results[results.index(" ") + 1:])
 up_time_dict = {up_time[i + 1]: up_time[i] for i in range(0, len(up_time), 2)}
 up_time_minutes = 0
 for key in up_time_dict.keys():
+    if 'week' in key:
+        up_time_minutes += int(up_time_dict[key]) * 7 * 24 * 60
     if 'day' in key:
         up_time_minutes += int(up_time_dict[key]) * 60 * 24
     if 'hour' in key:
