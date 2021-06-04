@@ -2,6 +2,10 @@ from flask import Flask, request, jsonify
 import psycopg2
 import os
 
+
+# TODO(map) There should be a way to interact with the endpoint such that I can approve
+# a device when it pings me if I know who it is, but they haven't been on the network
+# since I put this in place.
 app = Flask(__name__)
 db_name = os.environ['DBNAME']
 db_user = os.environ['DBUSER']

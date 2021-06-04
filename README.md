@@ -30,9 +30,9 @@ To set up the application there are a few steps required to set up the Flask app
 2. Create a Python virtual environment within the folder with the command `python3 -m venv ./venv`
 3. Launch the virtual environment from the folder with `source venv/bin/activate`
 4. Install the dependencies in the requirements.txt with `pip install -r requirements.txt`
-5. Set the following appropriate environment variables for the flask app to run
-- FLASKAPP=hello.py
-- FLASKENV=development (This is stricly only necessary for hotswapping code during development
+5. Set the following appropriate environment variables for the flask app to run (note: you can create a script file that exports all of these and run with `source script_file.sh`)
+- FLASK_APP=hello.py
+- FLASK_ENV=development (This is stricly only necessary for hotswapping code during development
 - DBNAME=networkmonitoring
 - DBUSER=networkmonitor
 - DBPASS=pass
@@ -41,6 +41,7 @@ To set up the application there are a few steps required to set up the Flask app
 - EMAILPASS=pass (Password for the above email address)
 - SMSGATEWAY=smsgateway (Used for texting alerts.If this isn't desired you don't need to set)
 - HOSTMAC=11:11:11:11:11 (This should be the MAC address of the device running the app)
+- EXPECTEDINTERNETSPEED=100 (This should be the up/down speed that you are paying for)
 6. Create a text file with a list of trusted device's MAC addresses called `trusted_macs.txt` in the folder with each MAC address on a separate line. This will be used as a source of truth for authorized devices 
 7. Run the app with `flask run` (Including `--host=0.0.0.0` will make the app available to other computers outside of the localhost)
 

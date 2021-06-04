@@ -9,6 +9,10 @@ import requests
 # -------------------------------------------------------
 # ps -eo ppid,user,%cpu,%mem,comm --sort -pcpu | head -10
 
+# TODO(map) Need to get the temperature of the Pi as well and store. This means the 
+# DB will need to be updated to store that value and the endpoint will need to be updated
+# to include taking in that new value as part of the JSON
+
 # Setting up command to get user count and load averages. 
 command = ['uptime']
 results = subprocess.check_output(command).decode("utf-8").rstrip()

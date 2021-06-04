@@ -61,6 +61,7 @@ nmap_results = subprocess.check_output(command).decode("utf-8").split('\n')[1:-2
 mac_info_dict = {}
 for i in range(0, len(nmap_results), 3):
     mac_address = ''
+    # NOTE(map) : 'cheekers' should be something configured in the environment variables.
     if 'cheekers' not in nmap_results[i] and 'MAC Address' in nmap_results[i+2]:
         result= nmap_results[i+2].split(': ')
         mac_address = result[1][:result[1].index(" ")]
